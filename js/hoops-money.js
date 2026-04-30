@@ -7,7 +7,7 @@ const coaches = [
     cogName: 'React',
     image: 'images/image-001.png',
     freeUrl: 'https://chatgpt.com/g/g-69f0984f5fc881918ff9630398483a75-basketball-money-the-pattern-coach',
-    cogUrl: '/cogs/cog-01.html',
+    cogUrl: '/cogs/cog-02.html', // ✅ CHANGED
     purpose: {
       en: 'Learn to see repeated cues, defender habits, spacing signals, mistakes, and opportunities before reacting.',
       es: 'Aprende a ver señales repetidas, hábitos defensivos, spacing, errores y oportunidades antes de reaccionar.'
@@ -29,7 +29,7 @@ const coaches = [
     cogName: 'Recall',
     image: 'images/image-002.png',
     freeUrl: 'https://chatgpt.com/g/g-69f0aa32ab2481918057aa69e24fd03d-basketball-money-the-reaction-control-coach',
-    cogUrl: '/cogs/cog-02.html',
+    cogUrl: '/cogs/cog-01.html', // ✅ CHANGED
     purpose: {
       en: 'Learn to react quickly without panic, overreaction, emotional loss, or poor discipline.',
       es: 'Aprende a reaccionar rápido sin pánico, sobre-reacción, pérdida emocional o falta de disciplina.'
@@ -110,107 +110,3 @@ const coaches = [
     }
   }
 ];
-
-const body = document.body;
-const coachGrid = document.getElementById('coachGrid');
-const drillGrid = document.getElementById('drillGrid');
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-function lang(){
-  return body.dataset.lang || 'en';
-}
-
-function render(){
-  const current = lang();
-
-  coachGrid.innerHTML = coaches.map(coach => `
-    <article class="coach-card">
-      <div class="coach-image">
-        <img src="${coach.image}" alt="${coach.name}">
-      </div>
-
-      <div class="coach-top">
-        <span class="coach-number">${coach.n}</span>
-        <span class="coach-topic">${coach.topic}</span>
-        <h3>${coach.name}</h3>
-        <p>${coach.purpose[current]}</p>
-      </div>
-
-      <div class="coach-body">
-        <div class="cog-line">
-          <span>${coach.cog}</span>
-          <span>FREE</span>
-        </div>
-
-        <p class="cog-name">${coach.cogName}</p>
-
-        <div class="mini-list">
-          ${coach.bullets[current].map(item => `<span>${item}</span>`).join('')}
-        </div>
-
-        <div class="card-actions">
-          <a class="small-btn free" href="${coach.freeUrl}" target="_blank" rel="noopener noreferrer">
-            ${current === 'en' ? 'Open Free Coach' : 'Abrir Coach Gratis'}
-          </a>
-
-          <a class="small-btn paid" href="${coach.cogUrl}">
-            ${current === 'en' ? `Play Free ${coach.cog}` : `Jugar ${coach.cog} Gratis`}
-          </a>
-        </div>
-      </div>
-    </article>
-  `).join('');
-
-  drillGrid.innerHTML = coaches.map(coach => `
-    <article class="drill-card">
-      <strong>${coach.cog}</strong>
-      <h3>${coach.cogName}</h3>
-      <p>${coach.drill[current]}</p>
-      <a class="small-btn paid" href="${coach.cogUrl}" style="margin-top:14px;">
-        ${current === 'en' ? `Play Free ${coach.cog}` : `Jugar ${coach.cog} Gratis`}
-      </a>
-    </article>
-  `).join('');
-}
-
-function setLanguage(nextLang){
-  body.dataset.lang = nextLang;
-  document.documentElement.lang = nextLang === 'es' ? 'es' : 'en';
-
-  document.querySelectorAll('[data-set-lang]').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.setLang === nextLang);
-  });
-
-  render();
-}
-
-function closeMenu(){
-  mobileMenu.classList.remove('open');
-  menuToggle.classList.remove('active');
-  menuToggle.setAttribute('aria-expanded','false');
-}
-
-function openMenu(){
-  mobileMenu.classList.add('open');
-  menuToggle.classList.add('active');
-  menuToggle.setAttribute('aria-expanded','true');
-}
-
-document.querySelectorAll('[data-set-lang]').forEach(btn => {
-  btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
-});
-
-menuToggle.addEventListener('click', () => {
-  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
-});
-
-document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
-
-window.addEventListener('resize', () => {
-  if(window.innerWidth > 920) closeMenu();
-});
-
-render();
