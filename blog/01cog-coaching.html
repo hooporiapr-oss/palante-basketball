@@ -169,6 +169,27 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
+
+    .bm-cover {
+      margin: 28px auto 38px;
+      max-width: 720px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+      background: #000;
+    }
+
+    .bm-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .bm-cover-bottom {
+      margin-top: 46px;
+      margin-bottom: 24px;
+    }
   </style>
 </head>
 <body>
@@ -176,6 +197,10 @@
     <div class="bm-kicker">Basketball Money IQ</div>
     <h1 class="bm-title">Why Most Players Think They’re Fast — But Aren’t</h1>
     <p class="bm-subtitle">Think Faster. Play Smarter. Create Value.</p>
+
+    <figure class="bm-cover bm-cover-top">
+      <img src="/cover-01f.png" alt="Basketball Money Cognitive Edge front cover" />
+    </figure>
 
     <div class="bm-toggle" aria-label="Language toggle">
       <button class="active" onclick="setLanguage('en', this)">English</button>
@@ -347,6 +372,10 @@
         </div>
       </section>
     </article>
+
+    <figure class="bm-cover bm-cover-bottom">
+      <img src="/cover-01b.png" alt="Basketball Money Cognitive Edge final cover" />
+    </figure>
 
     <div class="bm-footer-note">Basketball Money = Value</div>
   </main>
