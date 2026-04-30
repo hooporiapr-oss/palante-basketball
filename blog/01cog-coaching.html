@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Money IQ | Why Most Players Think They’re Fast — But Aren’t</title>
+  <style>
+    :root {
+      --bm-black: #050505;
+      --bm-dark: #111111;
+      --bm-gold: #d4af37;
+      --bm-white: #ffffff;
+      --bm-gray: #cfcfcf;
+      --bm-muted: #8f8f8f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #050505 55%, #000 100%);
+      color: var(--bm-white);
+      line-height: 1.6;
+    }
+
+    .bm-blog-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 22px 80px;
+    }
+
+    .bm-kicker {
+      color: var(--bm-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .bm-title {
+      font-size: clamp(2.2rem, 6vw, 4.6rem);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .bm-subtitle {
+      font-size: 1.15rem;
+      color: var(--bm-gray);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .bm-toggle {
+      display: inline-flex;
+      gap: 8px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 999px;
+      margin: 20px 0 42px;
+    }
+
+    .bm-toggle button {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      color: var(--bm-white);
+      background: transparent;
+      transition: all 0.2s ease;
+    }
+
+    .bm-toggle button.active {
+      background: var(--bm-gold);
+      color: var(--bm-black);
+    }
+
+    .bm-article {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 26px;
+      padding: clamp(26px, 5vw, 54px);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    .bm-lang {
+      display: none;
+    }
+
+    .bm-lang.active {
+      display: block;
+    }
+
+    h2 {
+      color: var(--bm-gold);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-top: 44px;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 30px;
+      margin-bottom: 8px;
+      color: var(--bm-white);
+    }
+
+    p {
+      color: var(--bm-gray);
+      font-size: 1.05rem;
+      margin: 0 0 18px;
+    }
+
+    ul {
+      margin: 10px 0 24px;
+      padding-left: 22px;
+      color: var(--bm-gray);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .bm-callout {
+      border-left: 4px solid var(--bm-gold);
+      background: rgba(212, 175, 55, 0.08);
+      padding: 18px 20px;
+      margin: 30px 0;
+      border-radius: 0 16px 16px 0;
+      color: var(--bm-white);
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+
+    .bm-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+      margin: 40px 0;
+    }
+
+    .bm-final-question {
+      margin-top: 44px;
+      padding: 28px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(212, 175, 55, 0.45);
+    }
+
+    .bm-final-question p {
+      color: var(--bm-white);
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .bm-footer-note {
+      color: var(--bm-muted);
+      margin-top: 28px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+  </style>
+</head>
+<body>
+  <main class="bm-blog-wrapper">
+    <div class="bm-kicker">Basketball Money IQ</div>
+    <h1 class="bm-title">Why Most Players Think They’re Fast — But Aren’t</h1>
+    <p class="bm-subtitle">Think Faster. Play Smarter. Create Value.</p>
+
+    <div class="bm-toggle" aria-label="Language toggle">
+      <button class="active" onclick="setLanguage('en', this)">English</button>
+      <button onclick="setLanguage('es', this)">Español PR</button>
+    </div>
+
+    <article class="bm-article">
+      <section id="en" class="bm-lang active" lang="en">
+        <p>You feel it.</p>
+        <p>The energy. The pressure. The speed of the game.</p>
+        <p>You think: “I just need to play faster.”</p>
+        <div class="bm-callout">That’s the first mistake.</div>
+
+        <h2>Fast Is Not the Same as Effective</h2>
+        <p>Most players don’t play fast.</p>
+        <p>They play rushed.</p>
+        <p>They react late. They rush decisions. They lose control. They miss what is actually happening.</p>
+        <p>Then they blame the speed of the game.</p>
+        <div class="bm-callout">But the game isn’t fast. Your thinking is late.</div>
+
+        <h2>The Game Is Testing One Thing</h2>
+        <p>Not your moves. Not your athleticism. Not your confidence.</p>
+        <p>It is testing:</p>
+        <ul>
+          <li>How early you see</li>
+          <li>How well you control your reaction</li>
+          <li>How organized you stay</li>
+          <li>How much you track</li>
+          <li>How quickly you decide</li>
+        </ul>
+        <p>That is Game Intelligence.</p>
+
+        <div class="bm-divider"></div>
+
+        <h2>The Five Things That Actually Control the Game</h2>
+        <p>High-level players do not guess. They operate through a system.</p>
+
+        <h3>1. Pattern Recognition</h3>
+        <p>You either see what is coming, or you wait until it is too late.</p>
+        <p>Coming off a screen — did you recognize the coverage early?</p>
+        <p>If not, you are already behind.</p>
+
+        <h3>2. Reaction Control</h3>
+        <p>You either stay in control, or you panic.</p>
+        <p>Shot fake — defender jumps. Do you stay balanced, or rush the next move?</p>
+        <p>Fast is not the same as rushed.</p>
+
+        <h3>3. Sequence Recall</h3>
+        <p>Basketball is not one move. It is a chain.</p>
+        <p>You either know what comes next, or the play breaks.</p>
+        <p>Some players look lost because they did not forget the move — they lost the sequence.</p>
+
+        <h3>4. Multi-Target Vision</h3>
+        <p>The game is not one thing. It is everything at once.</p>
+        <p>Ball. Defender. Help. Teammates. Space.</p>
+        <p>If you only see one, you only have one option. And that is easy to stop.</p>
+
+        <h3>5. Decision Speed</h3>
+        <p>This is where everything shows up.</p>
+        <p>The game gives you a window. Then it closes.</p>
+        <p>Catch → hesitation → advantage gone.</p>
+        <div class="bm-callout">A correct decision made late is still a bad decision.</div>
+
+        <h2>Why Most Players Stay Stuck</h2>
+        <p>Because they train more drills, more reps, and more moves — but never train how they think.</p>
+        <p>So they see late, react emotionally, lose structure, miss reads, hesitate, and wonder why the game feels fast.</p>
+
+        <h2>The Truth About Playing Faster</h2>
+        <p>You do not need to move faster.</p>
+        <div class="bm-callout">You need to see earlier.</div>
+        <p>Seeing earlier gives you time. Time lets you stay in control, stay organized, see more, and decide on time.</p>
+        <p>That is real speed.</p>
+
+        <h2>What Actually Creates Value</h2>
+        <p>Players who think better make fewer mistakes, stay composed, execute consistently, and earn trust.</p>
+        <p>Trust leads to more minutes, bigger roles, and more opportunities.</p>
+        <p>That is Basketball Money.</p>
+
+        <h2>The Shift</h2>
+        <p>You do not wait for the game anymore.</p>
+        <p>You start reading it early.</p>
+        <p>You do not rush. You control.</p>
+        <p>You do not guess. You decide.</p>
+
+        <div class="bm-final-question">
+          <p>Next possession: before you move, before you dribble, before you decide — what did you see first?</p>
+        </div>
+      </section>
+
+      <section id="es" class="bm-lang" lang="es">
+        <p>Tú lo sientes.</p>
+        <p>La energía. La presión. La velocidad del juego.</p>
+        <p>Piensas: “Solo tengo que jugar más rápido.”</p>
+        <div class="bm-callout">Ese es el primer error.</div>
+
+        <h2>Rápido No Es Lo Mismo Que Efectivo</h2>
+        <p>La mayoría de los jugadores no juegan rápido.</p>
+        <p>Juegan apurados.</p>
+        <p>Reaccionan tarde. Apuran decisiones. Pierden control. No ven lo que realmente está pasando.</p>
+        <p>Después le echan la culpa a la velocidad del juego.</p>
+        <div class="bm-callout">Pero el juego no está rápido. Tu pensamiento está tarde.</div>
+
+        <h2>El Juego Está Probando Una Cosa</h2>
+        <p>No tus movimientos. No tu atletismo. No tu confianza.</p>
+        <p>Está probando:</p>
+        <ul>
+          <li>Qué tan temprano ves</li>
+          <li>Qué tan bien controlas tu reacción</li>
+          <li>Qué tan organizado te mantienes</li>
+          <li>Cuánto puedes ver a la vez</li>
+          <li>Qué tan rápido decides</li>
+        </ul>
+        <p>Eso es Inteligencia de Juego.</p>
+
+        <div class="bm-divider"></div>
+
+        <h2>Las Cinco Cosas Que Controlan El Juego</h2>
+        <p>Los jugadores de nivel no adivinan. Operan con un sistema.</p>
+
+        <h3>1. Reconocimiento de Patrones</h3>
+        <p>O ves lo que viene, o esperas hasta que sea demasiado tarde.</p>
+        <p>Sales de una cortina — ¿reconociste la defensa temprano?</p>
+        <p>Si no, ya estás atrás.</p>
+
+        <h3>2. Control de Reacción</h3>
+        <p>O te mantienes en control, o entras en pánico.</p>
+        <p>Finta de tiro — el defensor brinca. ¿Te mantienes balanceado o apuras el próximo movimiento?</p>
+        <p>Rápido no es lo mismo que apurado.</p>
+
+        <h3>3. Secuencia</h3>
+        <p>El baloncesto no es un solo movimiento. Es una cadena.</p>
+        <p>O sabes lo que sigue, o la jugada se rompe.</p>
+        <p>Algunos jugadores se ven perdidos porque no olvidaron el movimiento — perdieron la secuencia.</p>
+
+        <h3>4. Visión Multi-Objetivo</h3>
+        <p>El juego no es una sola cosa. Es todo a la vez.</p>
+        <p>Bola. Defensor. Ayuda. Compañeros. Espacio.</p>
+        <p>Si solo ves una cosa, solo tienes una opción. Y eso es fácil de parar.</p>
+
+        <h3>5. Velocidad de Decisión</h3>
+        <p>Aquí es donde todo se ve.</p>
+        <p>El juego te da una ventana. Después se cierra.</p>
+        <p>Recibes → dudas → la ventaja se fue.</p>
+        <div class="bm-callout">Una decisión correcta tomada tarde sigue siendo una mala decisión.</div>
+
+        <h2>Por Qué Muchos Jugadores Se Quedan Estancados</h2>
+        <p>Porque entrenan más drills, más repeticiones y más movimientos — pero nunca entrenan cómo piensan.</p>
+        <p>Entonces ven tarde, reaccionan emocionalmente, pierden estructura, fallan lecturas, dudan y se preguntan por qué el juego se siente tan rápido.</p>
+
+        <h2>La Verdad Sobre Jugar Más Rápido</h2>
+        <p>No tienes que moverte más rápido.</p>
+        <div class="bm-callout">Tienes que ver más temprano.</div>
+        <p>Ver temprano te da tiempo. El tiempo te permite mantener control, organizarte, ver más y decidir a tiempo.</p>
+        <p>Eso es velocidad real.</p>
+
+        <h2>Lo Que Realmente Crea Valor</h2>
+        <p>Los jugadores que piensan mejor cometen menos errores, mantienen compostura, ejecutan con consistencia y ganan confianza.</p>
+        <p>La confianza lleva a más minutos, roles más grandes y más oportunidades.</p>
+        <p>Eso es Basketball Money.</p>
+
+        <h2>El Cambio</h2>
+        <p>Ya no esperas que el juego te diga lo que está pasando.</p>
+        <p>Empiezas a leerlo temprano.</p>
+        <p>No te apuras. Controlas.</p>
+        <p>No adivinas. Decides.</p>
+
+        <div class="bm-final-question">
+          <p>Próxima posesión: antes de moverte, antes de driblar, antes de decidir — ¿qué viste primero?</p>
+        </div>
+      </section>
+    </article>
+
+    <div class="bm-footer-note">Basketball Money = Value</div>
+  </main>
+
+  <script>
+    function setLanguage(lang, button) {
+      document.querySelectorAll('.bm-lang').forEach(section => {
+        section.classList.remove('active');
+      });
+
+      document.getElementById(lang).classList.add('active');
+
+      document.querySelectorAll('.bm-toggle button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>
