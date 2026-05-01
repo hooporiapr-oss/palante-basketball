@@ -120,6 +120,16 @@
       box-shadow:0 12px 30px rgba(255,122,26,.22);
     }
 
+    .mobile-home-btn{
+      display:none;
+      padding:10px 16px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--gold),var(--orange));
+      color:#110900;
+      font-weight:1000;
+      box-shadow:0 12px 30px rgba(255,122,26,.22);
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -449,6 +459,7 @@
 
     @media(max-width:900px){
       .nav-links{display:none}
+      .mobile-home-btn{display:inline-flex;align-items:center;justify-content:center}
       .hero-grid,.drop-grid,.logo-grid{grid-template-columns:1fr}
       .hero-copy{text-align:center}
       .hero-actions{justify-content:center}
@@ -482,6 +493,8 @@
         <a href="https://shop.hoops.money">Hoops Money Store</a>
         <a class="nav-home-btn" href="https://shop.hoops.money">Home</a>
       </div>
+
+      <a class="mobile-home-btn" href="https://shop.hoops.money">Home</a>
     </div>
   </nav>
 
