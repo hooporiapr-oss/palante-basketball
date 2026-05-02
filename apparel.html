@@ -1,501 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<section style="background:#000000;color:#ffffff;padding:70px 20px;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:900px;margin:0 auto;line-height:1.6;">
 
-  <title>Basketball Money Apparel — UNSTOPPABLE</title>
+    <div style="text-align:center;margin-bottom:40px;">
+      <button onclick="document.getElementById('en').style.display='block';document.getElementById('es').style.display='none';"
+        style="background:#ffffff;color:#000000;border:0;padding:12px 22px;margin:5px;border-radius:999px;font-weight:800;cursor:pointer;">
+        English
+      </button>
 
-  <meta
-    name="description"
-    content="Basketball Money apparel is identity. Believe in every shot. UNSTOPPABLE."
-  />
-
-  <link rel="icon" href="hoops-money.png" />
-
-  <style>
-    :root{
-      --black:#000000;
-      --white:#ffffff;
-      --soft:#d9d9d9;
-      --line:rgba(255,255,255,.18);
-      --panel:rgba(255,255,255,.045);
-      --max:1180px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-
-    body{
-      min-height:100vh;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background:var(--black);
-      color:var(--white);
-      overflow-x:hidden;
-    }
-
-    a{text-decoration:none;color:inherit}
-
-    .wrap{
-      width:min(var(--max), calc(100% - 28px));
-      margin:auto;
-    }
-
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(0,0,0,.88);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav-inner{
-      min-height:74px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:1000;
-      letter-spacing:-.03em;
-    }
-
-    .brand img{
-      width:48px;
-      height:48px;
-      object-fit:cover;
-      border-radius:14px;
-      border:1px solid var(--line);
-    }
-
-    .brand small{
-      display:block;
-      color:var(--soft);
-      font-size:.66rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-
-    .brand strong{
-      display:block;
-      color:var(--white);
-      font-size:1rem;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      color:var(--soft);
-      font-size:.88rem;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .nav-links a:hover{color:var(--white)}
-
-    .home-btn,
-    .mobile-home-btn{
-      padding:10px 16px;
-      border:1px solid var(--white);
-      border-radius:999px;
-      color:var(--black) !important;
-      background:var(--white);
-      font-weight:1000;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .mobile-home-btn{display:none}
-
-    .hero{
-      min-height:calc(100vh - 74px);
-      display:grid;
-      align-items:center;
-      padding:58px 0 70px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(320px,.95fr);
-      gap:42px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      color:var(--soft);
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      font-size:.78rem;
-      font-weight:1000;
-      margin-bottom:22px;
-    }
-
-    h1{
-      font-size:clamp(4rem,12vw,10rem);
-      line-height:.82;
-      letter-spacing:-.09em;
-      text-transform:uppercase;
-      max-width:900px;
-    }
-
-    .hero-copy p{
-      max-width:760px;
-      margin-top:24px;
-      color:var(--soft);
-      font-size:clamp(1.08rem,1.8vw,1.32rem);
-      line-height:1.6;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:30px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding:0 22px;
-      border-radius:999px;
-      border:1px solid var(--white);
-      font-weight:1000;
-      text-align:center;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      transition:.2s ease;
-    }
-
-    .btn:hover{transform:translateY(-2px)}
-
-    .btn-primary{
-      background:var(--white);
-      color:var(--black);
-    }
-
-    .btn-secondary{
-      background:transparent;
-      color:var(--white);
-    }
-
-    .hero-card{
-      border:1px solid var(--line);
-      background:var(--panel);
-      border-radius:34px;
-      padding:14px;
-      box-shadow:0 32px 90px rgba(255,255,255,.08);
-      overflow:hidden;
-    }
-
-    .hero-card img{
-      width:100%;
-      display:block;
-      border-radius:24px;
-      object-fit:cover;
-      aspect-ratio:1/1;
-      background:#000;
-    }
-
-    .statement{
-      padding:70px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .statement-box{
-      text-align:center;
-      max-width:980px;
-      margin:auto;
-    }
-
-    .statement-box h2,
-    .section-head h2,
-    .cta-box h2{
-      font-size:clamp(3rem,8vw,7rem);
-      line-height:.84;
-      letter-spacing:-.08em;
-      text-transform:uppercase;
-    }
-
-    .statement-box p{
-      max-width:820px;
-      margin:24px auto 0;
-      color:var(--soft);
-      font-size:1.14rem;
-      line-height:1.65;
-    }
-
-    .section{padding:72px 0}
-
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:24px;
-      margin-bottom:28px;
-    }
-
-    .section-head p{
-      max-width:560px;
-      color:var(--soft);
-      line-height:1.65;
-      font-size:1.05rem;
-    }
-
-    .identity-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .identity-card{
-      min-height:245px;
-      border:1px solid var(--line);
-      background:var(--panel);
-      border-radius:28px;
-      padding:24px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition:.2s ease;
-    }
-
-    .identity-card:hover{
-      transform:translateY(-3px);
-      border-color:var(--white);
-    }
-
-    .identity-card span{
-      color:var(--soft);
-      font-size:.78rem;
-      font-weight:1000;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-    }
-
-    .identity-card h3{
-      margin-top:16px;
-      font-size:2.25rem;
-      line-height:.9;
-      letter-spacing:-.06em;
-      text-transform:uppercase;
-    }
-
-    .identity-card p{
-      margin-top:16px;
-      color:var(--soft);
-      line-height:1.55;
-    }
-
-    .logo-band{padding:20px 0 72px}
-
-    .logo-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:16px;
-    }
-
-    .logo-card{
-      min-height:360px;
-      border:1px solid var(--line);
-      border-radius:30px;
-      background:var(--panel);
-      padding:28px;
-      display:grid;
-      place-items:center;
-    }
-
-    .logo-card img{
-      width:min(100%,420px);
-      border-radius:24px;
-      filter:drop-shadow(0 24px 42px rgba(255,255,255,.14));
-    }
-
-    .cta{
-      padding:70px 0 82px;
-      border-top:1px solid var(--line);
-    }
-
-    .cta-box{
-      text-align:center;
-      max-width:980px;
-      margin:auto;
-    }
-
-    .cta-box p{
-      max-width:760px;
-      margin:24px auto 30px;
-      color:var(--soft);
-      font-size:1.12rem;
-      line-height:1.65;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:32px 0 52px;
-      text-align:center;
-      color:var(--soft);
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.82rem;
-    }
-
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .mobile-home-btn{display:inline-flex;align-items:center;justify-content:center}
-      .hero-grid,.identity-grid,.logo-grid{grid-template-columns:1fr}
-      .hero-copy{text-align:center}
-      .hero-actions{justify-content:center}
-      .section-head{flex-direction:column;align-items:center;text-align:center}
-      .identity-card{text-align:center}
-    }
-
-    @media(max-width:620px){
-      .hero-actions{display:grid;grid-template-columns:1fr}
-      .btn{width:100%}
-      h1{font-size:clamp(4rem,18vw,6rem)}
-      .statement-box h2,.section-head h2,.cta-box h2{font-size:clamp(3rem,14vw,5rem)}
-    }
-  </style>
-</head>
-
-<body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="https://shop.hoops.money">
-        <img src="bm-logo.png" alt="Basketball Money logo" />
-        <span>
-          <small>Basketball Money</small>
-          <strong>Apparel</strong>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#feeling">Believe</a>
-        <a href="#identity">Identity</a>
-        <a href="https://shop.hoops.money">Store</a>
-        <a class="home-btn" href="https://shop.hoops.money">Home</a>
-      </div>
-
-      <a class="mobile-home-btn" href="https://shop.hoops.money">Home</a>
+      <button onclick="document.getElementById('en').style.display='none';document.getElementById('es').style.display='block';"
+        style="background:transparent;color:#ffffff;border:1px solid #ffffff;padding:12px 22px;margin:5px;border-radius:999px;font-weight:800;cursor:pointer;">
+        Español PR
+      </button>
     </div>
-  </nav>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Basketball Money Apparel</div>
+    <div id="en">
+      <h1 style="font-size:clamp(40px,8vw,90px);line-height:.9;text-transform:uppercase;">Believe In Every Shot</h1>
+      <p>Every shot matters.</p>
+      <p>On the court.<br>In life.<br>In every decision you make.</p>
+      <p>People call it risk.</p>
+      <p>We don’t.</p>
+      <p>There is no hesitation.<br>No second guessing.<br>No waiting for perfect conditions.</p>
+      <p>You take the shot because you believe in it.</p>
+      <p>And if you miss…</p>
+      <p>You don’t lose belief.</p>
+      <p>You take the next one the same way.</p>
+      <p>That’s the difference.</p>
 
-          <h1>UNSTOPPABLE</h1>
+      <h2 style="font-size:clamp(44px,9vw,100px);line-height:.85;text-transform:uppercase;margin-top:55px;">UNSTOPPABLE</h2>
+      <p>This is not something you become.</p>
+      <p>This is something you decide.</p>
+      <p>No one gives it to you.<br>No one confirms it.<br>No one validates it.</p>
+      <p>You wear it because it’s already in you.</p>
+      <p>UNSTOPPABLE doesn’t mean perfect.</p>
+      <p>It means:</p>
+      <p>No hesitation.<br>No drop in standard.<br>No change in identity under pressure.</p>
+      <p>Attention doesn’t change you.<br>Failure doesn’t change you.<br>Nothing changes you.</p>
 
-          <p>
-            One word. One identity. No explanation needed. Basketball Money apparel is built
-            for the ones who already feel it before they put it on.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://shop.hoops.money">Shop Now</a>
-            <a class="btn btn-secondary" href="#feeling">Believe In Every Shot</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <img src="bm-logo.png" alt="Basketball Money logo" />
-        </div>
-      </div>
-    </section>
-
-    <section class="statement" id="feeling">
-      <div class="wrap">
-        <div class="statement-box">
-          <h2>Believe In Every Shot</h2>
-          <p>
-            On the court. In life. In business. Every shot matters because every shot carries belief.
-            People call it risk. We call it commitment.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="identity">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Identity</h2>
-          <p>
-            This is not just what you wear. This is what people see, feel, and remember.
-            UNSTOPPABLE commands attention before a word is spoken.
-          </p>
-        </div>
-
-        <div class="identity-grid">
-          <article class="identity-card">
-            <div>
-              <span>01</span>
-              <h3>Presence</h3>
-              <p>You step in and the room notices. Not because you ask for attention, but because the identity carries it.</p>
-            </div>
-          </article>
-
-          <article class="identity-card">
-            <div>
-              <span>02</span>
-              <h3>Confidence</h3>
-              <p>The word creates the vision. They see it, think it, and imagine themselves inside it.</p>
-            </div>
-          </article>
-
-          <article class="identity-card">
-            <div>
-              <span>03</span>
-              <h3>Standard</h3>
-              <p>UNSTOPPABLE is not decoration. It is the cleanest expression of Basketball Money identity.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="logo-band">
-      <div class="wrap logo-grid">
-        <div class="logo-card">
-          <img src="hoops-money.png" alt="Hoops Money logo" />
-        </div>
-        <div class="logo-card">
-          <img src="bm-logo.png" alt="Basketball Money logo" />
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="wrap">
-        <div class="cta-box">
-          <h2>Wear UNSTOPPABLE</h2>
-          <p>
-            Basketball Money apparel is identity. Believe in every shot. Step into the word.
-          </p>
-
-          <a class="btn btn-primary" href="https://shop.hoops.money">Enter The Store</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      Basketball Money — UNSTOPPABLE
+      <h2 style="font-size:clamp(34px,7vw,72px);line-height:.9;text-transform:uppercase;margin-top:55px;">This Is Basketball Money</h2>
+      <p>Basketball Money is Value.</p>
+      <p>Value is not given.</p>
+      <p>It is created by how you think, how you move, and how you decide.</p>
+      <p>You don’t wait for the game to start.</p>
+      <p>You show up with the standard already set.</p>
+      <h2 style="font-size:clamp(34px,7vw,76px);line-height:.9;text-transform:uppercase;margin-top:55px;">Believe in Every Shot.<br>Be UNSTOPPABLE.</h2>
     </div>
-  </footer>
-</body>
-</html>
+
+    <div id="es" style="display:none;">
+      <h1 style="font-size:clamp(40px,8vw,90px);line-height:.9;text-transform:uppercase;">Cree En Cada Tiro</h1>
+      <p>Cada tiro cuenta.</p>
+      <p>En la cancha.<br>En la vida.<br>En cada decisión que tomas.</p>
+      <p>La gente lo llama riesgo.</p>
+      <p>Nosotros no.</p>
+      <p>No hay duda.<br>No hay pensarlo dos veces.<br>No hay esperar condiciones perfectas.</p>
+      <p>Tomas el tiro porque crees en él.</p>
+      <p>Y si fallas…</p>
+      <p>No pierdes la creencia.</p>
+      <p>Tomas el próximo de la misma manera.</p>
+      <p>Esa es la diferencia.</p>
+
+      <h2 style="font-size:clamp(44px,9vw,100px);line-height:.85;text-transform:uppercase;margin-top:55px;">UNSTOPPABLE</h2>
+      <p>Esto no es algo en lo que te conviertes.</p>
+      <p>Esto es algo que tú decides.</p>
+      <p>Nadie te lo da.<br>Nadie te lo confirma.<br>Nadie te lo valida.</p>
+      <p>Lo usas porque ya está dentro de ti.</p>
+      <p>UNSTOPPABLE no significa perfecto.</p>
+      <p>Significa:</p>
+      <p>Sin duda.<br>Sin bajar el estándar.<br>Sin cambiar tu identidad bajo presión.</p>
+      <p>La atención no te cambia.<br>Fallar no te cambia.<br>Nada te cambia.</p>
+
+      <h2 style="font-size:clamp(34px,7vw,72px);line-height:.9;text-transform:uppercase;margin-top:55px;">Esto Es Basketball Money</h2>
+      <p>Basketball Money es Valor.</p>
+      <p>El valor no se regala.</p>
+      <p>Se crea por cómo piensas, cómo te mueves y cómo decides.</p>
+      <p>No esperas a que empiece el juego.</p>
+      <p>Llegas con el estándar ya puesto.</p>
+      <h2 style="font-size:clamp(34px,7vw,76px);line-height:.9;text-transform:uppercase;margin-top:55px;">Cree en cada tiro.<br>Sé UNSTOPPABLE.</h2>
+    </div>
+
+  </div>
+</section>
