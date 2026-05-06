@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subliminal Basketball</title>
+  <title>Pa’Lante Basketball | Train. Think. Build. Keep Going.</title>
+  <meta name="description" content="Pa’Lante Basketball is a bilingual basketball training and mindset hub built around drills, decision-making, cognitive coaching, and the keep-going Pa’Lante movement." />
 
   <style>
     :root {
       --black: #050505;
       --dark: #0b0b0b;
+      --deep: #111111;
       --gold: #f5b642;
       --orange: #ff7a18;
+      --coffee: #8a4a26;
+      --cream: #fff4e2;
       --teal: #11d9c5;
-      --purple: #b45cff;
-      --pink: #ff3faf;
+      --green: #65ff9a;
       --white: #ffffff;
       --muted: #b8b8b8;
       --card: rgba(255, 255, 255, 0.06);
@@ -39,7 +42,7 @@
       font-family: Arial, Helvetica, sans-serif;
       background:
         radial-gradient(circle at top left, rgba(245, 182, 66, 0.22), transparent 34%),
-        radial-gradient(circle at top right, rgba(180, 92, 255, 0.13), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 122, 24, 0.13), transparent 34%),
         radial-gradient(circle at bottom right, rgba(17, 217, 197, 0.14), transparent 35%),
         linear-gradient(180deg, #050505 0%, #0b0b0b 55%, #050505 100%);
       color: var(--white);
@@ -103,7 +106,7 @@
       letter-spacing: clamp(0.05em, 0.8vw, 0.12em);
       line-height: 1.05;
       text-transform: uppercase;
-      background: linear-gradient(135deg, var(--white), var(--gold), var(--orange), var(--teal), var(--purple));
+      background: linear-gradient(135deg, var(--white), var(--gold), var(--orange), var(--teal));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -191,7 +194,7 @@
       position: absolute;
       top: calc(100% + 10px);
       right: 6%;
-      width: min(340px, calc(100vw - 28px));
+      width: min(360px, calc(100vw - 28px));
       border: 1px solid var(--border);
       border-radius: 24px;
       background:
@@ -240,7 +243,7 @@
       min-height: calc(100svh - 78px);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
       align-items: center;
       gap: clamp(28px, 5vw, 58px);
       padding: clamp(38px, 7vw, 74px) 6% 84px;
@@ -262,7 +265,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 760px;
+      max-width: 790px;
       min-width: 0;
     }
 
@@ -293,6 +296,25 @@
       filter: drop-shadow(0 0 28px rgba(245, 182, 66, 0.42));
     }
 
+    .logo-fallback {
+      display: none;
+      width: clamp(150px, 18vw, 245px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 2px solid rgba(245, 182, 66, 0.55);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(245, 182, 66, 0.22), transparent 48%),
+        rgba(255, 255, 255, 0.05);
+      place-items: center;
+      text-align: center;
+      color: var(--gold);
+      font-weight: 1000;
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      box-shadow: 0 0 38px rgba(245, 182, 66, 0.18);
+    }
+
     h1 {
       font-size: clamp(3rem, 8vw, 7.8rem);
       line-height: 0.9;
@@ -313,7 +335,7 @@
       font-size: clamp(1.1rem, 2vw, 1.55rem);
       line-height: 1.45;
       color: var(--white);
-      max-width: 700px;
+      max-width: 720px;
       margin-bottom: 30px;
       font-weight: 800;
     }
@@ -325,7 +347,7 @@
       color: var(--muted);
       font-size: clamp(0.98rem, 1.45vw, 1.06rem);
       line-height: 1.75;
-      max-width: 720px;
+      max-width: 740px;
     }
 
     .story strong {
@@ -495,6 +517,13 @@
       margin-bottom: 26px;
     }
 
+    .section-card h2 span {
+      background: linear-gradient(135deg, var(--white), var(--gold), var(--orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
     .section-card p {
       color: var(--muted);
       font-size: clamp(1rem, 1.55vw, 1.08rem);
@@ -502,11 +531,22 @@
       margin-bottom: 18px;
     }
 
+    .section-card strong {
+      color: var(--white);
+    }
+
     .section-card .closing {
       color: var(--white);
       font-weight: 900;
       font-size: clamp(1.08rem, 2vw, 1.3rem);
       margin-top: 24px;
+    }
+
+    .cafe-card {
+      background:
+        radial-gradient(circle at top left, rgba(245, 182, 66, 0.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(138, 74, 38, 0.35), transparent 35%),
+        rgba(255, 244, 226, 0.07);
     }
 
     footer {
@@ -580,7 +620,7 @@
       .nav-title {
         font-size: 0.84rem;
         letter-spacing: 0.07em;
-        max-width: 170px;
+        max-width: 190px;
       }
 
       .nav-actions {
@@ -612,6 +652,10 @@
       }
 
       .hero-logo {
+        width: clamp(145px, 38vw, 205px);
+      }
+
+      .logo-fallback {
         width: clamp(145px, 38vw, 205px);
       }
 
@@ -703,6 +747,10 @@
         width: min(210px, 58vw);
       }
 
+      .logo-fallback {
+        width: min(210px, 58vw);
+      }
+
       .subtitle {
         margin-bottom: 24px;
       }
@@ -758,9 +806,9 @@
 <body>
   <header class="site-header">
     <nav class="top-nav" aria-label="Main Navigation">
-      <a href="index.html" class="nav-brand" aria-label="Subliminal Basketball Home">
-        <img src="subliminal-transparent.png" alt="Subliminal Basketball Logo" class="nav-logo" />
-        <div class="nav-title">Subliminal Basketball</div>
+      <a href="index.html" class="nav-brand" aria-label="Pa’Lante Basketball Home">
+        <img src="palante-basketball-logo.png" alt="Pa’Lante Basketball Logo" class="nav-logo" />
+        <div class="nav-title">Pa’Lante Basketball</div>
       </a>
 
       <div class="nav-actions">
@@ -778,13 +826,13 @@
 
       <div class="nav-menu" id="navMenu">
         <a href="sub-drills.html">
-          <span data-lang="en">Subliminal Drills</span>
-          <span data-lang="es">Drills Subliminales</span>
+          <span data-lang="en">Pa’Lante Drills</span>
+          <span data-lang="es">Drills Pa’Lante</span>
         </a>
 
-        <a href="#identity">
-          <span data-lang="en">Identity</span>
-          <span data-lang="es">Identidad</span>
+        <a href="#mindset">
+          <span data-lang="en">Mindset</span>
+          <span data-lang="es">Mentalidad</span>
         </a>
 
         <a href="#pressure">
@@ -792,9 +840,9 @@
           <span data-lang="es">Presión</span>
         </a>
 
-        <a href="https://shop.hoops.money" target="_blank" rel="noopener">
-          <span data-lang="en">UNSTOPPABLE</span>
-          <span data-lang="es">UNSTOPPABLE</span>
+        <a href="#cafe">
+          <span data-lang="en">Café Pa’Lante</span>
+          <span data-lang="es">Café Pa’Lante</span>
         </a>
       </div>
     </nav>
@@ -804,70 +852,71 @@
     <section class="hero">
       <div class="hero-content">
         <div class="eyebrow">
-          <span data-lang="en">Train the response before the moment arrives.</span>
-          <span data-lang="es">Entrena la respuesta antes de que llegue el momento.</span>
+          <span data-lang="en">Train the next response. Take the next step.</span>
+          <span data-lang="es">Entrena la próxima respuesta. Da el próximo paso.</span>
         </div>
 
         <div class="hero-logo-wrap" aria-hidden="true">
-          <img src="subliminal-transparent.png" alt="" class="hero-logo" />
+          <img src="palante-basketball-logo.png" alt="" class="hero-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+          <div class="logo-fallback">Pa’Lante<br>Basketball</div>
         </div>
 
         <h1>
-          <span data-lang="en">Subliminal</span>
+          <span data-lang="en">Pa’Lante</span>
           <span data-lang="en">Basketball</span>
 
           <span data-lang="es">Baloncesto</span>
-          <span data-lang="es">Subliminal</span>
+          <span data-lang="es">Pa’Lante</span>
         </h1>
 
         <p class="subtitle">
-          <span data-lang="en">The game isn’t just played. It’s processed.</span>
-          <span data-lang="es">El juego no solo se juega. Se procesa.</span>
+          <span data-lang="en">Train. Think. Build. Keep going.</span>
+          <span data-lang="es">Entrena. Piensa. Construye. Sigue pa’lante.</span>
         </p>
 
         <div class="story">
           <p data-lang="en">
-            Every moment moves fast. Too fast for hesitation. Too fast for overthinking. The difference isn’t just skill—it’s how quickly you see, react, and decide.
+            Basketball moves fast. Every possession asks you to see, react, decide, and recover. Pa’Lante Basketball is built for the player, coach, parent, and basketball family that believes the next step still matters.
           </p>
 
           <p data-lang="en">
-            Most players train what they can do. Few train how they think. That’s the separation.
+            The game is not only about what you can do. It is about how you respond when the pressure rises, how you learn from the last play, and how you keep building value after every moment.
           </p>
 
           <p data-lang="en">
-            Subliminal Basketball is built on one principle: <strong>Train the game until your response becomes automatic.</strong>
+            Pa’Lante means keep going. In this system, that means <strong>one drill, one read, one decision, one conversation, and one step forward.</strong>
           </p>
 
           <p data-lang="es">
-            Cada momento se mueve rápido. Demasiado rápido para dudar. Demasiado rápido para pensar de más. La diferencia no es solamente la habilidad; es cuán rápido ves, reaccionas y decides.
+            El baloncesto se mueve rápido. Cada posesión te pide ver, reaccionar, decidir y recuperarte. Pa’Lante Basketball está creado para el jugador, coach, padre, madre y familia de baloncesto que entiende que el próximo paso todavía importa.
           </p>
 
           <p data-lang="es">
-            La mayoría de los jugadores entrenan lo que pueden hacer. Pocos entrenan cómo piensan. Ahí está la separación.
+            El juego no se trata solamente de lo que puedes hacer. Se trata de cómo respondes cuando sube la presión, cómo aprendes de la jugada anterior y cómo sigues construyendo valor después de cada momento.
           </p>
 
           <p data-lang="es">
-            Subliminal Basketball nace de un principio: <strong>Entrena el juego hasta que tu respuesta sea automática.</strong>
+            Pa’Lante significa seguir. En este sistema, significa <strong>un drill, una lectura, una decisión, una conversación y un paso hacia adelante.</strong>
           </p>
 
           <p class="power-line" data-lang="en">
-            Clarity under pressure. Control in motion. Decisions made on time.
+            One play. One drill. One cup. One step Pa’Lante.
           </p>
 
           <p class="power-line" data-lang="es">
-            Claridad bajo presión. Control en movimiento. Decisiones a tiempo.
+            Una jugada. Un drill. Una taza. Un paso Pa’Lante.
           </p>
         </div>
 
         <div class="cta-row">
           <a href="sub-drills.html" class="btn btn-primary">
-            <span data-lang="en">Subliminal Drills</span>
-            <span data-lang="es">Drills Subliminales</span>
+            <span data-lang="en">Start Pa’Lante Drills</span>
+            <span data-lang="es">Comenzar Drills Pa’Lante</span>
           </a>
 
-          <a href="https://shop.hoops.money" class="btn btn-secondary" target="_blank" rel="noopener">
-            <span data-lang="en">Wear UNSTOPPABLE</span>
-            <span data-lang="es">Viste UNSTOPPABLE</span>
+          <a href="https://cafepalante.com" class="btn btn-secondary" target="_blank" rel="noopener">
+            <span data-lang="en">Shop Café Pa’Lante</span>
+            <span data-lang="es">Comprar Café Pa’Lante</span>
           </a>
         </div>
       </div>
@@ -875,44 +924,44 @@
       <div class="visual-panel">
         <div class="court-card">
           <div class="badge">
-            <span data-lang="en">Automatic Response</span>
-            <span data-lang="es">Respuesta Automática</span>
+            <span data-lang="en">Keep Going Mindset</span>
+            <span data-lang="es">Mentalidad Pa’Lante</span>
           </div>
 
           <div class="visual-title">
-            <span data-lang="en">No<br>Hesitation</span>
-            <span data-lang="es">Sin<br>Duda</span>
+            <span data-lang="en">Next<br>Step</span>
+            <span data-lang="es">Próximo<br>Paso</span>
           </div>
 
           <div class="visual-footer">
-            <span data-lang="en">See it. Read it. React before the advantage disappears.</span>
-            <span data-lang="es">Velo. Léelo. Reacciona antes de que la ventaja desaparezca.</span>
+            <span data-lang="en">See it. Learn from it. Respond. Keep moving forward.</span>
+            <span data-lang="es">Velo. Aprende. Responde. Sigue hacia adelante.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="identity">
+    <section id="mindset">
       <div class="section-card">
         <h2>
-          <span data-lang="en">This Is Identity</span>
-          <span data-lang="es">Esto Es Identidad</span>
+          <span data-lang="en">Pa’Lante Is the Mindset</span>
+          <span data-lang="es">Pa’Lante Es la Mentalidad</span>
         </h2>
 
         <p data-lang="en">
-          This is not about trends. This is not about noise. This is identity. And how you show up matters.
+          Pa’Lante is not just a word. It is how you respond after a missed shot, a turnover, a tough loss, a hard practice, or a moment when the game tests you.
         </p>
 
         <p data-lang="en">
-          We don’t just play the game. We dress the game. What you wear reflects how you think: controlled, clear, unshaken under pressure, and UNSTOPPABLE.
+          This platform trains the basketball life: skill, decision-making, confidence, discipline, player value, and the ability to keep going when the moment gets difficult.
         </p>
 
         <p data-lang="es">
-          Esto no se trata de tendencias. Esto no se trata de ruido. Esto es identidad. Y la manera en que te presentas importa.
+          Pa’Lante no es solo una palabra. Es cómo respondes después de un tiro fallado, una pérdida de balón, una derrota fuerte, una práctica dura o un momento donde el juego te pone a prueba.
         </p>
 
         <p data-lang="es">
-          Nosotros no solo jugamos el juego. Nosotros vestimos el juego. Lo que te pones refleja cómo piensas: con control, claridad, firmeza bajo presión y mentalidad UNSTOPPABLE.
+          Esta plataforma entrena la vida del baloncesto: destreza, toma de decisiones, confianza, disciplina, valor del jugador y la capacidad de seguir cuando el momento se pone difícil.
         </p>
       </div>
     </section>
@@ -920,63 +969,55 @@
     <section id="pressure">
       <div class="section-card">
         <h2>
-          <span data-lang="en">Pressure Reveals Everything</span>
-          <span data-lang="es">La Presión Lo Revela Todo</span>
+          <span data-lang="en">Pressure Reveals the Next Step</span>
+          <span data-lang="es">La Presión Revela el Próximo Paso</span>
         </h2>
 
         <p data-lang="en">
-          No distractions. No hesitation. No wasted motion. From the drills to the design, everything points to one outcome: clarity under pressure, control in motion, and decisions made on time.
+          No player avoids pressure. The difference is how you process it. Pa’Lante Basketball helps you train the response: see the game, read the pattern, control the emotion, and make the next right play.
         </p>
 
         <p data-lang="en">
-          Because the advantage has a clock. And if you hesitate—you lose it.
+          From drills to cognitive coaching, everything points to one outcome: a player who can keep thinking, keep learning, and keep moving forward.
         </p>
 
         <p data-lang="es">
-          Sin distracciones. Sin dudas. Sin movimientos desperdiciados. Desde los ejercicios hasta el diseño, todo apunta a un solo resultado: claridad bajo presión, control en movimiento y decisiones tomadas a tiempo.
+          Ningún jugador evita la presión. La diferencia está en cómo la procesa. Pa’Lante Basketball te ayuda a entrenar la respuesta: ver el juego, leer el patrón, controlar la emoción y hacer la próxima jugada correcta.
         </p>
 
         <p data-lang="es">
-          Porque la ventaja tiene reloj. Y si dudas, la pierdes.
+          Desde los drills hasta el coaching cognitivo, todo apunta a un resultado: un jugador que puede seguir pensando, seguir aprendiendo y seguir hacia adelante.
         </p>
       </div>
     </section>
 
-    <section id="wear">
-      <div class="section-card">
+    <section id="cafe">
+      <div class="section-card cafe-card">
         <h2>
-          <span data-lang="en">UNSTOPPABLE</span>
-          <span data-lang="es">UNSTOPPABLE</span>
+          <span data-lang="en">Fuel the Morning. Carry the Dream.</span>
+          <span data-lang="es">Impulsa la Mañana. Carga el Sueño.</span>
         </h2>
 
         <p data-lang="en">
-          Wear Subliminal means one thing: <strong>UNSTOPPABLE.</strong>
+          Café Pa’Lante is the coffee and tea side of the movement — built for early practices, tournament mornings, late-night planning, coaches, parents, trainers, and basketball families who keep showing up.
         </p>
 
         <p data-lang="en">
-          This is not just apparel. This is the statement of the player who stays calm when pressure rises, sees the moment early, and responds without hesitation.
-        </p>
-
-        <p data-lang="en" class="closing">
-          UNSTOPPABLE is the wearable identity of Subliminal Basketball: clarity under pressure, control in motion, and automatic response before the moment arrives.
+          It is not separate from the message. It carries the same spirit: <strong>one cup, one step, one more reason to keep going.</strong>
         </p>
 
         <p data-lang="es">
-          Vestir Subliminal significa una cosa: <strong>UNSTOPPABLE.</strong>
+          Café Pa’Lante es la parte de café y té del movimiento: creado para prácticas temprano, mañanas de torneo, planificación de noche, coaches, padres, entrenadores y familias de baloncesto que siguen presentes.
         </p>
 
         <p data-lang="es">
-          Esto no es solo ropa. Es la declaración del jugador que mantiene la calma cuando sube la presión, ve el momento temprano y responde sin dudar.
-        </p>
-
-        <p data-lang="es" class="closing">
-          UNSTOPPABLE es la identidad que se viste en Subliminal Basketball: claridad bajo presión, control en movimiento y respuesta automática antes de que llegue el momento.
+          No está separado del mensaje. Lleva el mismo espíritu: <strong>una taza, un paso, una razón más para seguir pa’lante.</strong>
         </p>
 
         <div class="cta-row">
-          <a href="https://shop.hoops.money" class="btn btn-primary" target="_blank" rel="noopener">
-            <span data-lang="en">Wear UNSTOPPABLE</span>
-            <span data-lang="es">Viste UNSTOPPABLE</span>
+          <a href="https://cafepalante.com" class="btn btn-primary" target="_blank" rel="noopener">
+            <span data-lang="en">Shop Café Pa’Lante</span>
+            <span data-lang="es">Comprar Café Pa’Lante</span>
           </a>
         </div>
       </div>
@@ -984,8 +1025,8 @@
   </main>
 
   <footer>
-    <span data-lang="en">© 2026 Subliminal Basketball. Train the game until the response becomes automatic.</span>
-    <span data-lang="es">© 2026 Subliminal Basketball. Entrena el juego hasta que la respuesta sea automática.</span>
+    <span data-lang="en">© 2026 Pa’Lante Basketball. Train. Think. Build. Keep going.</span>
+    <span data-lang="es">© 2026 Pa’Lante Basketball. Entrena. Piensa. Construye. Sigue pa’lante.</span>
   </footer>
 
   <script>
@@ -1008,7 +1049,7 @@
         document.documentElement.lang = "en";
       }
 
-      localStorage.setItem("subliminalBasketballLang", lang);
+      localStorage.setItem("palanteBasketballLang", lang);
       closeMenu();
     }
 
@@ -1047,7 +1088,7 @@
       }
     });
 
-    const savedLang = localStorage.getItem("subliminalBasketballLang");
+    const savedLang = localStorage.getItem("palanteBasketballLang");
     if (savedLang === "es") {
       setLanguage("es");
     }
