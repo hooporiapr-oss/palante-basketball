@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pa’Lante Basketball | Train. Think. Build. Keep Going.</title>
-  <meta name="description" content="Pa’Lante Basketball is a bilingual basketball training and mindset hub built around drills, decision-making, cognitive coaching, and the keep-going Pa’Lante movement." />
+  <title>Café Pa’Lante Games | Free Online Games</title>
+  <meta name="description" content="Free online games provided by Café Pa’Lante for the ones who keep going. Simple, fun, and easy to play." />
 
   <style>
     :root {
-      --black: #050505;
-      --dark: #0b0b0b;
-      --deep: #111111;
-      --gold: #f5b642;
-      --orange: #ff7a18;
-      --coffee: #8a4a26;
-      --cream: #fff4e2;
-      --teal: #11d9c5;
-      --green: #65ff9a;
+      --dark: #2b160d;
+      --espresso: #3a2116;
+      --mocha: #704329;
+      --caramel: #b9773f;
+      --gold: #d9a441;
+      --latte: #ecd0ad;
+      --cream: #fff8ef;
       --white: #ffffff;
-      --muted: #b8b8b8;
-      --card: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.14);
+      --text: #2b1a12;
+      --muted: #765f52;
+      --green: #456b3f;
+      --shadow: 0 24px 70px rgba(58, 33, 22, 0.15);
     }
 
     * {
@@ -39,13 +38,12 @@
       width: 100%;
       min-height: 100vh;
       overflow-x: hidden;
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(245, 182, 66, 0.22), transparent 34%),
-        radial-gradient(circle at top right, rgba(255, 122, 24, 0.13), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(17, 217, 197, 0.14), transparent 35%),
-        linear-gradient(180deg, #050505 0%, #0b0b0b 55%, #050505 100%);
-      color: var(--white);
+        radial-gradient(circle at 0% 0%, rgba(217, 164, 65, 0.18), transparent 30%),
+        radial-gradient(circle at 100% 10%, rgba(112, 67, 41, 0.12), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #fff8ef 52%, #ffffff 100%);
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     a {
@@ -57,60 +55,78 @@
       font: inherit;
     }
 
+    [data-lang="es"] {
+      display: none !important;
+    }
+
+    body.is-es [data-lang="en"] {
+      display: none !important;
+    }
+
+    body.is-es [data-lang="es"] {
+      display: revert !important;
+    }
+
     .site-header {
-      width: 100%;
       position: fixed;
       top: 0;
       left: 0;
       z-index: 50;
-      background: rgba(5, 5, 5, 0.84);
+      width: 100%;
+      border-bottom: 1px solid rgba(112, 67, 41, 0.12);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    main {
-      padding-top: 86px;
     }
 
     .top-nav {
-      width: min(100%, 1480px);
+      position: relative;
+      width: min(1120px, calc(100% - 32px));
+      min-height: 74px;
       margin: 0 auto;
-      padding: 14px 6%;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
       gap: 14px;
-      position: relative;
+      align-items: center;
     }
 
-    .nav-brand {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
       min-width: 0;
+      gap: 12px;
     }
 
-    .nav-logo {
-      width: clamp(42px, 7vw, 58px);
-      height: clamp(42px, 7vw, 58px);
-      object-fit: contain;
-      display: block;
-      flex-shrink: 0;
-      filter: drop-shadow(0 0 18px rgba(245, 182, 66, 0.35));
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, var(--mocha) 0 38%, var(--gold) 39% 44%, var(--dark) 45% 100%);
+      color: var(--cream);
+      box-shadow: 0 14px 30px rgba(58, 33, 22, 0.16);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.66rem;
+      font-weight: 1000;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      text-align: center;
     }
 
-    .nav-title {
+    .brand-title {
       min-width: 0;
-      font-size: clamp(0.86rem, 2.2vw, 1.18rem);
-      font-weight: 950;
-      letter-spacing: clamp(0.05em, 0.8vw, 0.12em);
-      line-height: 1.05;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, var(--white), var(--gold), var(--orange), var(--teal));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      overflow-wrap: anywhere;
+      color: var(--dark);
+      font-size: clamp(1rem, 2.6vw, 1.26rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      white-space: nowrap;
+    }
+
+    .brand-title span {
+      color: var(--caramel);
+      font-style: italic;
     }
 
     .nav-actions {
@@ -118,63 +134,57 @@
       align-items: center;
       justify-content: flex-end;
       gap: 10px;
-      flex-shrink: 0;
     }
 
     .language-toggle {
-      display: flex;
-      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
       border-radius: 999px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.05);
-      min-height: 42px;
+      background: var(--dark);
+      box-shadow: 0 16px 34px rgba(58, 33, 22, 0.12);
     }
 
     .language-toggle button {
+      border: 0;
+      border-radius: 999px;
       background: transparent;
-      border: none;
-      color: var(--muted);
-      padding: 0 14px;
+      color: var(--cream);
       cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
       font-weight: 900;
-      letter-spacing: 0.04em;
-      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      padding: 8px 12px;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
     .language-toggle button.active {
-      background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #050505;
+      background: var(--cream);
+      color: var(--dark);
     }
 
     .hamburger {
       width: 44px;
       height: 44px;
+      flex: 0 0 auto;
+      border: 1px solid rgba(112, 67, 41, 0.18);
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--cream);
+      cursor: pointer;
       display: inline-flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 5px;
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .hamburger:hover {
-      transform: translateY(-1px);
-      border-color: rgba(245, 182, 66, 0.55);
     }
 
     .hamburger span {
-      width: 19px;
+      width: 18px;
       height: 2px;
       border-radius: 999px;
-      background: var(--white);
-      display: block;
+      background: var(--dark);
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
@@ -193,17 +203,16 @@
     .nav-menu {
       position: absolute;
       top: calc(100% + 10px);
-      right: 6%;
-      width: min(360px, calc(100vw - 28px));
-      border: 1px solid var(--border);
+      right: 0;
+      width: min(340px, calc(100vw - 28px));
+      display: none;
+      border: 1px solid rgba(112, 67, 41, 0.14);
       border-radius: 24px;
       background:
-        radial-gradient(circle at top left, rgba(245, 182, 66, 0.18), transparent 38%),
-        radial-gradient(circle at bottom right, rgba(17, 217, 197, 0.12), transparent 42%),
-        rgba(8, 8, 8, 0.97);
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
-      padding: 12px;
-      display: none;
+        radial-gradient(circle at top left, rgba(217, 164, 65, 0.18), transparent 40%),
+        rgba(255, 248, 239, 0.98);
+      box-shadow: 0 24px 70px rgba(58, 33, 22, 0.18);
+      padding: 10px;
     }
 
     .nav-menu.open {
@@ -214,174 +223,118 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 14px;
       padding: 15px 14px;
       border-radius: 16px;
-      color: var(--white);
+      color: var(--dark);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
       font-weight: 900;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.83rem;
-      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .nav-menu a:hover,
     .nav-menu a:focus-visible {
-      background: rgba(255, 255, 255, 0.07);
-      color: var(--gold);
+      background: rgba(112, 67, 41, 0.08);
       outline: none;
     }
 
     .nav-menu a::after {
       content: "→";
-      color: var(--teal);
-      flex-shrink: 0;
+      color: var(--caramel);
+      font-size: 1rem;
+      flex: 0 0 auto;
+    }
+
+    main {
+      padding: calc(74px + clamp(28px, 5vw, 68px)) 0 clamp(56px, 7vw, 90px);
+    }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
     }
 
     .hero {
-      width: min(100%, 1480px);
-      min-height: calc(100svh - 78px);
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: clamp(26px, 5vw, 54px);
       align-items: center;
-      gap: clamp(28px, 5vw, 58px);
-      padding: clamp(38px, 7vw, 74px) 6% 84px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 44px 44px;
-      opacity: 0.25;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 790px;
-      min-width: 0;
     }
 
     .eyebrow {
-      color: var(--teal);
-      font-weight: 900;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-size: clamp(0.72rem, 1.6vw, 0.83rem);
-      margin-bottom: 18px;
-      text-align: center;
-      width: 100%;
-    }
-
-    .hero-logo-wrap {
-      width: 100%;
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
       align-items: center;
-      margin: 4px 0 26px;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 9px 14px;
+      border: 1px solid rgba(183, 119, 63, 0.20);
+      border-radius: 999px;
+      background: rgba(236, 208, 173, 0.35);
+      color: #8a3f22;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.10em;
+      line-height: 1.2;
+      text-transform: uppercase;
     }
 
-    .hero-logo {
-      width: clamp(150px, 18vw, 245px);
-      height: auto;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 0 28px rgba(245, 182, 66, 0.42));
-    }
-
-    .logo-fallback {
-      display: none;
-      width: clamp(150px, 18vw, 245px);
-      aspect-ratio: 1;
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
       border-radius: 50%;
-      border: 2px solid rgba(245, 182, 66, 0.55);
-      background:
-        radial-gradient(circle at 50% 50%, rgba(245, 182, 66, 0.22), transparent 48%),
-        rgba(255, 255, 255, 0.05);
-      place-items: center;
-      text-align: center;
-      color: var(--gold);
-      font-weight: 1000;
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      box-shadow: 0 0 38px rgba(245, 182, 66, 0.18);
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(217, 164, 65, 0.18);
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 7.8rem);
-      line-height: 0.9;
-      letter-spacing: -0.06em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
+      color: var(--dark);
+      font-size: clamp(3rem, 7.4vw, 7.2rem);
+      line-height: 0.88;
+      letter-spacing: -0.075em;
+      max-width: 780px;
     }
 
     h1 span {
       display: block;
-      background: linear-gradient(135deg, var(--white), var(--gold), var(--orange));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: var(--caramel);
+      font-style: italic;
+      letter-spacing: -0.06em;
     }
 
-    .subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.55rem);
-      line-height: 1.45;
-      color: var(--white);
-      max-width: 720px;
-      margin-bottom: 30px;
-      font-weight: 800;
-    }
-
-    .story {
-      display: flex;
-      flex-direction: column;
-      gap: 17px;
+    .lead {
+      max-width: 660px;
+      margin-top: 24px;
       color: var(--muted);
-      font-size: clamp(0.98rem, 1.45vw, 1.06rem);
-      line-height: 1.75;
-      max-width: 740px;
+      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+      line-height: 1.65;
     }
 
-    .story strong {
-      color: var(--white);
-    }
-
-    .story .power-line {
-      color: var(--white);
-      font-weight: 900;
-      font-size: clamp(1.08rem, 2vw, 1.22rem);
-      line-height: 1.45;
-      margin-top: 6px;
-    }
-
-    .cta-row {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 36px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .btn {
-      min-height: 50px;
+      min-height: 56px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 24px;
       border-radius: 999px;
+      padding: 15px 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
       font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.82rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      letter-spacing: 0.04em;
       text-align: center;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover {
@@ -389,314 +342,312 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #050505;
-      box-shadow: 0 18px 45px rgba(245, 182, 66, 0.22);
+      background: linear-gradient(135deg, var(--dark), var(--mocha));
+      color: var(--cream);
+      box-shadow: 0 18px 34px rgba(58, 33, 22, 0.22);
     }
 
     .btn-secondary {
-      border: 1px solid var(--border);
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(112, 67, 41, 0.16);
+      background: var(--cream);
+      color: var(--dark);
     }
 
-    .visual-panel {
+    .visual-card {
+      position: relative;
+      min-height: 460px;
+      border: 1px solid rgba(112, 67, 41, 0.14);
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.90) 0 7%, transparent 8%),
+        linear-gradient(145deg, #fff5e8 0%, #efd2ad 48%, #b9773f 100%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: clamp(26px, 4vw, 42px);
+    }
+
+    .visual-card::after {
+      content: "FREE GAMES";
+      position: absolute;
+      right: -25px;
+      top: 32px;
+      color: rgba(40, 21, 12, 0.075);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(3rem, 6vw, 4.4rem);
+      font-weight: 1000;
+      letter-spacing: 0.02em;
+      writing-mode: vertical-rl;
+    }
+
+    .game-emblem {
       position: relative;
       z-index: 2;
-      min-height: clamp(420px, 45vw, 560px);
-      border: 1px solid var(--border);
-      border-radius: 34px;
+      width: min(310px, 86%);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
       background:
-        radial-gradient(circle at 50% 20%, rgba(245, 182, 66, 0.25), transparent 34%),
-        radial-gradient(circle at 50% 80%, rgba(17, 217, 197, 0.16), transparent 35%),
-        rgba(255, 255, 255, 0.045);
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(24px, 4vw, 38px);
-      min-width: 0;
+        radial-gradient(circle at center, var(--cream) 0 28%, var(--gold) 29% 34%, var(--dark) 35% 68%, var(--caramel) 69% 100%);
+      color: var(--cream);
+      text-align: center;
+      box-shadow: 0 32px 70px rgba(43, 22, 13, 0.28);
     }
 
-    .court-card {
-      width: min(100%, 420px);
-      aspect-ratio: 3 / 4;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-        radial-gradient(circle at center, rgba(255, 122, 24, 0.24), transparent 45%);
+    .game-emblem strong {
+      display: block;
+      color: var(--cream);
+      font-size: clamp(2.1rem, 4vw, 3.7rem);
+      line-height: 0.85;
+      letter-spacing: -0.08em;
+    }
+
+    .game-emblem span {
+      display: block;
+      margin-top: 12px;
+      color: var(--latte);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .games-section {
+      margin-top: clamp(60px, 8vw, 96px);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 28px;
+    }
+
+    .kicker {
+      margin-bottom: 10px;
+      color: #8a3f22;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: var(--dark);
+      font-size: clamp(2.3rem, 5vw, 5rem);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+    }
+
+    .section-copy {
+      max-width: 660px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.65;
+    }
+
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .game-card {
+      min-height: 210px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: clamp(22px, 4vw, 30px);
-      position: relative;
-      overflow: hidden;
+      gap: 18px;
+      border: 1px solid rgba(112, 67, 41, 0.12);
+      border-radius: 26px;
+      background: rgba(255, 248, 239, 0.84);
+      box-shadow: 0 16px 42px rgba(58, 33, 22, 0.08);
+      padding: 22px;
     }
 
-    .court-card::before {
-      content: "";
-      position: absolute;
-      inset: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.12);
-      border-radius: 24px;
-    }
-
-    .court-card::after {
-      content: "";
-      position: absolute;
-      width: 58%;
-      aspect-ratio: 1;
-      border: 2px solid rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .badge {
-      position: relative;
-      z-index: 2;
-      align-self: flex-start;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: rgba(17, 217, 197, 0.12);
-      border: 1px solid rgba(17, 217, 197, 0.35);
-      color: var(--teal);
-      font-size: 0.72rem;
-      text-transform: uppercase;
+    .game-card small {
+      color: #8a3f22;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.74rem;
       font-weight: 900;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .visual-title {
-      position: relative;
-      z-index: 2;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 0.92;
-      font-weight: 900;
-      text-transform: uppercase;
+    .game-card h3 {
+      color: var(--dark);
+      font-size: clamp(1.55rem, 2.5vw, 2rem);
+      line-height: 0.98;
       letter-spacing: -0.05em;
+      margin-top: 10px;
     }
 
-    .visual-title span {
-      color: var(--gold);
-    }
-
-    .visual-footer {
-      position: relative;
-      z-index: 2;
+    .game-card p {
       color: var(--muted);
+      font-size: 0.98rem;
       line-height: 1.5;
-      font-weight: 700;
-      font-size: clamp(0.92rem, 1.6vw, 1rem);
+      margin-top: 10px;
     }
 
-    section:not(.hero) {
-      width: min(100%, 1480px);
-      margin: 0 auto;
-      padding: 90px 6%;
+    .game-card .btn {
+      width: 100%;
+      margin-top: auto;
+      min-height: 52px;
     }
 
-    .section-card {
-      max-width: 1100px;
-      margin: 0 auto;
-      border: 1px solid var(--border);
-      border-radius: 34px;
-      padding: clamp(28px, 5vw, 60px);
-      background: var(--card);
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.28);
+    .coming-soon {
+      opacity: 0.72;
     }
 
-    .section-card h2 {
-      font-size: clamp(2rem, 5vw, 4.6rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
-      margin-bottom: 26px;
-    }
-
-    .section-card h2 span {
-      background: linear-gradient(135deg, var(--white), var(--gold), var(--orange));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .section-card p {
+    .coming-soon .btn {
+      pointer-events: none;
+      background: rgba(112, 67, 41, 0.12);
       color: var(--muted);
-      font-size: clamp(1rem, 1.55vw, 1.08rem);
-      line-height: 1.75;
-      margin-bottom: 18px;
+      box-shadow: none;
     }
 
-    .section-card strong {
-      color: var(--white);
+    .sponsor-card {
+      margin-top: clamp(54px, 7vw, 84px);
+      border-radius: 34px;
+      border: 1px solid rgba(112, 67, 41, 0.14);
+      background: linear-gradient(135deg, var(--dark), #452516 52%, #7c4728);
+      color: var(--cream);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 54px);
+      text-align: center;
     }
 
-    .section-card .closing {
-      color: var(--white);
-      font-weight: 900;
-      font-size: clamp(1.08rem, 2vw, 1.3rem);
-      margin-top: 24px;
+    .sponsor-card h2 {
+      color: var(--cream);
+      margin: 0 auto;
     }
 
-    .cafe-card {
-      background:
-        radial-gradient(circle at top left, rgba(245, 182, 66, 0.22), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(138, 74, 38, 0.35), transparent 35%),
-        rgba(255, 244, 226, 0.07);
+    .sponsor-card p {
+      max-width: 690px;
+      margin: 18px auto 0;
+      color: rgba(255, 248, 239, 0.84);
+      font-size: 1.06rem;
+      line-height: 1.65;
+    }
+
+    .sponsor-card .btn {
+      margin-top: 26px;
+      background: var(--cream);
+      color: var(--dark);
     }
 
     footer {
-      width: 100%;
-      padding: 36px 6%;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(112, 67, 41, 0.12);
+      background: var(--cream);
       color: var(--muted);
+      padding: 28px 16px;
       text-align: center;
-      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.86rem;
       line-height: 1.5;
     }
 
-    [data-lang="es"] {
-      display: none;
-    }
-
-    body.es [data-lang="en"] {
-      display: none;
-    }
-
-    body.es [data-lang="es"] {
-      display: block;
-    }
-
-    body.es span[data-lang="es"],
-    body.es strong[data-lang="es"] {
-      display: inline;
-    }
-
-    body.es span[data-lang="en"],
-    body.es strong[data-lang="en"] {
-      display: none;
-    }
-
-    @media (max-width: 980px) {
+    @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
-        min-height: auto;
       }
 
-      .hero-content {
-        max-width: 860px;
+      .visual-card {
+        min-height: 380px;
       }
 
-      .visual-panel {
-        width: 100%;
+      .game-list {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 700px) {
-      main {
-        padding-top: 76px;
-      }
-
+    @media (max-width: 640px) {
       .top-nav {
-        padding: 12px 5%;
+        width: min(100% - 24px, 1120px);
+        min-height: auto;
+        padding: 12px 0;
         grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 10px;
       }
 
-      .nav-brand {
-        gap: 9px;
+      .brand-title {
+        font-size: 1rem;
       }
 
-      .nav-logo {
-        width: 44px;
-        height: 44px;
-      }
-
-      .nav-title {
-        font-size: 0.84rem;
-        letter-spacing: 0.07em;
-        max-width: 190px;
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 0.58rem;
       }
 
       .nav-actions {
         gap: 8px;
       }
 
-      .language-toggle {
-        min-height: 40px;
-      }
-
       .language-toggle button {
-        padding: 0 10px;
-        font-size: 0.66rem;
+        padding: 7px 9px;
+        font-size: 0.64rem;
       }
 
       .hamburger {
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
       }
 
       .nav-menu {
-        right: 5%;
-        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        width: 100%;
       }
 
-      .hero {
-        padding: 36px 5% 70px;
-        gap: 34px;
+      main {
+        padding-top: calc(74px + 26px);
       }
 
-      .hero-logo {
-        width: clamp(145px, 38vw, 205px);
-      }
-
-      .logo-fallback {
-        width: clamp(145px, 38vw, 205px);
+      .shell {
+        width: min(100% - 24px, 1120px);
       }
 
       .eyebrow {
-        letter-spacing: 0.11em;
+        font-size: 0.66rem;
+        letter-spacing: 0.07em;
+        line-height: 1.35;
       }
 
       h1 {
-        font-size: clamp(2.78rem, 15vw, 4.8rem);
+        font-size: clamp(3rem, 16vw, 4.8rem);
       }
 
-      .cta-row {
-        flex-direction: column;
+      .lead {
+        font-size: 1.04rem;
       }
 
+      .hero-actions,
       .btn {
         width: 100%;
       }
 
-      .visual-panel {
-        min-height: 390px;
-        border-radius: 28px;
+      .visual-card {
+        min-height: 330px;
+        border-radius: 30px;
       }
 
-      .court-card {
-        max-width: 330px;
-        border-radius: 26px;
+      .game-emblem {
+        width: min(250px, 86%);
       }
 
-      section:not(.hero) {
-        padding: 70px 5%;
-      }
-
-      .section-card {
-        border-radius: 28px;
+      .game-card {
+        min-height: auto;
       }
     }
 
-    @media (max-width: 470px) {
+    @media (max-width: 430px) {
       main {
-        padding-top: 122px;
+        padding-top: 142px;
       }
 
       .top-nav {
@@ -704,14 +655,9 @@
         justify-items: stretch;
       }
 
-      .nav-brand {
+      .brand {
         justify-content: center;
         text-align: center;
-      }
-
-      .nav-title {
-        max-width: none;
-        font-size: 0.88rem;
       }
 
       .nav-actions {
@@ -721,83 +667,15 @@
 
       .language-toggle {
         flex: 1;
-        max-width: 245px;
+        max-width: 232px;
       }
 
       .language-toggle button {
         flex: 1;
-        padding: 0 8px;
       }
 
-      .nav-menu {
-        left: 14px;
-        right: 14px;
-        width: auto;
-      }
-
-      .hero {
-        padding-top: 30px;
-      }
-
-      .hero-logo-wrap {
-        margin: 2px 0 22px;
-      }
-
-      .hero-logo {
-        width: min(210px, 58vw);
-      }
-
-      .logo-fallback {
-        width: min(210px, 58vw);
-      }
-
-      .subtitle {
-        margin-bottom: 24px;
-      }
-
-      .story {
-        line-height: 1.68;
-        gap: 15px;
-      }
-
-      .visual-panel {
-        min-height: 360px;
-        padding: 18px;
-      }
-
-      .court-card {
-        max-width: 300px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      main {
-        padding-top: 118px;
-      }
-
-      .nav-title {
-        font-size: 0.78rem;
-      }
-
-      .language-toggle {
-        max-width: 220px;
-      }
-
-      .language-toggle button {
-        font-size: 0.6rem;
-      }
-
-      .hero {
-        padding-left: 4.5%;
-        padding-right: 4.5%;
-      }
-
-      h1 {
-        font-size: 2.55rem;
-      }
-
-      .visual-panel {
-        min-height: 330px;
+      .hamburger {
+        flex: 0 0 42px;
       }
     }
   </style>
@@ -805,16 +683,16 @@
 
 <body>
   <header class="site-header">
-    <nav class="top-nav" aria-label="Main Navigation">
-      <a href="index.html" class="nav-brand" aria-label="Pa’Lante Basketball Home">
-        <img src="palantehoops.png" alt="Pa’Lante Basketball Logo" class="nav-logo" />
-        <div class="nav-title">Pa’Lante Basketball</div>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="index.html" class="brand" aria-label="Café Pa’Lante Games Home">
+        <div class="brand-mark">Pa’<br>Lante</div>
+        <div class="brand-title">Café <span>Pa’Lante</span> Games</div>
       </a>
 
       <div class="nav-actions">
-        <div class="language-toggle" aria-label="Language selector">
-          <button id="enBtn" class="active" type="button">English</button>
-          <button id="esBtn" type="button">Español</button>
+        <div class="language-toggle" aria-label="Language toggle">
+          <button type="button" class="active" id="enBtn">EN</button>
+          <button type="button" id="esBtn">ES</button>
         </div>
 
         <button class="hamburger" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
@@ -825,272 +703,193 @@
       </div>
 
       <div class="nav-menu" id="navMenu">
-        <a href="sub-drills.html">
-          <span data-lang="en">Pa’Lante Drills</span>
-          <span data-lang="es">Drills Pa’Lante</span>
+        <a href="#games">
+          <span data-lang="en">Free Games</span>
+          <span data-lang="es">Juegos Gratis</span>
         </a>
-
-        <a href="#mindset">
-          <span data-lang="en">Mindset</span>
-          <span data-lang="es">Mentalidad</span>
-        </a>
-
-        <a href="#pressure">
-          <span data-lang="en">Pressure</span>
-          <span data-lang="es">Presión</span>
-        </a>
-
-        <a href="#cafe">
-          <span data-lang="en">Café Pa’Lante</span>
-          <span data-lang="es">Café Pa’Lante</span>
+        <a href="https://cafepalante.com" target="_blank" rel="noopener">
+          <span data-lang="en">Shop Café Pa’Lante</span>
+          <span data-lang="es">Comprar Café Pa’Lante</span>
         </a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">
-          <span data-lang="en">Train the next response. Take the next step.</span>
-          <span data-lang="es">Entrena la próxima respuesta. Da el próximo paso.</span>
-        </div>
-
-        <div class="hero-logo-wrap" aria-hidden="true">
-          <img src="palantehoops.png" alt="" class="hero-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-          <div class="logo-fallback">Pa’Lante<br>Basketball</div>
-        </div>
-
-        <h1>
-          <span data-lang="en">Pa’Lante</span>
-          <span data-lang="en">Basketball</span>
-
-          <span data-lang="es">Baloncesto</span>
-          <span data-lang="es">Pa’Lante</span>
-        </h1>
-
-        <p class="subtitle">
-          <span data-lang="en">Train. Think. Build. Keep going.</span>
-          <span data-lang="es">Entrena. Piensa. Construye. Sigue pa’lante.</span>
-        </p>
-
-        <div class="story">
-          <p data-lang="en">
-            Basketball moves fast. Every possession asks you to see, react, decide, and recover. Pa’Lante Basketball is built for the player, coach, parent, and basketball family that believes the next step still matters.
-          </p>
-
-          <p data-lang="en">
-            The game is not only about what you can do. It is about how you respond when the pressure rises, how you learn from the last play, and how you keep building value after every moment.
-          </p>
-
-          <p data-lang="en">
-            Pa’Lante means keep going. In this system, that means <strong>one drill, one read, one decision, one conversation, and one step forward.</strong>
-          </p>
-
-          <p data-lang="es">
-            El baloncesto se mueve rápido. Cada posesión te pide ver, reaccionar, decidir y recuperarte. Pa’Lante Basketball está creado para el jugador, coach, padre, madre y familia de baloncesto que entiende que el próximo paso todavía importa.
-          </p>
-
-          <p data-lang="es">
-            El juego no se trata solamente de lo que puedes hacer. Se trata de cómo respondes cuando sube la presión, cómo aprendes de la jugada anterior y cómo sigues construyendo valor después de cada momento.
-          </p>
-
-          <p data-lang="es">
-            Pa’Lante significa seguir. En este sistema, significa <strong>un drill, una lectura, una decisión, una conversación y un paso hacia adelante.</strong>
-          </p>
-
-          <p class="power-line" data-lang="en">
-            One play. One drill. One cup. One step Pa’Lante.
-          </p>
-
-          <p class="power-line" data-lang="es">
-            Una jugada. Un drill. Una taza. Un paso Pa’Lante.
-          </p>
-        </div>
-
-        <div class="cta-row">
-          <a href="sub-drills.html" class="btn btn-primary">
-            <span data-lang="en">Start Pa’Lante Drills</span>
-            <span data-lang="es">Comenzar Drills Pa’Lante</span>
-          </a>
-
-          <a href="https://cafepalante.com" class="btn btn-secondary" target="_blank" rel="noopener">
-            <span data-lang="en">Shop Café Pa’Lante</span>
-            <span data-lang="es">Comprar Café Pa’Lante</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="visual-panel">
-        <div class="court-card">
-          <div class="badge">
-            <span data-lang="en">Keep Going Mindset</span>
-            <span data-lang="es">Mentalidad Pa’Lante</span>
+    <div class="shell">
+      <section class="hero" id="home">
+        <div>
+          <div class="eyebrow">
+            <span data-lang="en">Free online games provided by Café Pa’Lante</span>
+            <span data-lang="es">Juegos online gratis presentados por Café Pa’Lante</span>
           </div>
 
-          <div class="visual-title">
-            <span data-lang="en">Next<br>Step</span>
-            <span data-lang="es">Próximo<br>Paso</span>
-          </div>
+          <h1 data-lang="en">Play. Smile. <span>Pa’Lante.</span></h1>
+          <h1 data-lang="es">Juega. Sonríe. <span>Pa’Lante.</span></h1>
 
-          <div class="visual-footer">
-            <span data-lang="en">See it. Learn from it. Respond. Keep moving forward.</span>
-            <span data-lang="es">Velo. Aprende. Responde. Sigue hacia adelante.</span>
+          <p class="lead" data-lang="en">Simple, fun games made for quick moments of focus, enjoyment, and forward motion — proudly provided by Café Pa’Lante.</p>
+          <p class="lead" data-lang="es">Juegos sencillos y divertidos para momentos rápidos de enfoque, disfrute y movimiento hacia adelante — presentados con orgullo por Café Pa’Lante.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#games">
+              <span data-lang="en">See Free Games</span>
+              <span data-lang="es">Ver Juegos Gratis</span>
+            </a>
+            <a class="btn btn-secondary" href="https://cafepalante.com" target="_blank" rel="noopener">
+              <span data-lang="en">Shop Café Pa’Lante Coffee</span>
+              <span data-lang="es">Comprar Café Pa’Lante</span>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="mindset">
-      <div class="section-card">
-        <h2>
-          <span data-lang="en">Pa’Lante Is the Mindset</span>
-          <span data-lang="es">Pa’Lante Es la Mentalidad</span>
-        </h2>
-
-        <p data-lang="en">
-          Pa’Lante is not just a word. It is how you respond after a missed shot, a turnover, a tough loss, a hard practice, or a moment when the game tests you.
-        </p>
-
-        <p data-lang="en">
-          This platform trains the basketball life: skill, decision-making, confidence, discipline, player value, and the ability to keep going when the moment gets difficult.
-        </p>
-
-        <p data-lang="es">
-          Pa’Lante no es solo una palabra. Es cómo respondes después de un tiro fallado, una pérdida de balón, una derrota fuerte, una práctica dura o un momento donde el juego te pone a prueba.
-        </p>
-
-        <p data-lang="es">
-          Esta plataforma entrena la vida del baloncesto: destreza, toma de decisiones, confianza, disciplina, valor del jugador y la capacidad de seguir cuando el momento se pone difícil.
-        </p>
-      </div>
-    </section>
-
-    <section id="pressure">
-      <div class="section-card">
-        <h2>
-          <span data-lang="en">Pressure Reveals the Next Step</span>
-          <span data-lang="es">La Presión Revela el Próximo Paso</span>
-        </h2>
-
-        <p data-lang="en">
-          No player avoids pressure. The difference is how you process it. Pa’Lante Basketball helps you train the response: see the game, read the pattern, control the emotion, and make the next right play.
-        </p>
-
-        <p data-lang="en">
-          From drills to cognitive coaching, everything points to one outcome: a player who can keep thinking, keep learning, and keep moving forward.
-        </p>
-
-        <p data-lang="es">
-          Ningún jugador evita la presión. La diferencia está en cómo la procesa. Pa’Lante Basketball te ayuda a entrenar la respuesta: ver el juego, leer el patrón, controlar la emoción y hacer la próxima jugada correcta.
-        </p>
-
-        <p data-lang="es">
-          Desde los drills hasta el coaching cognitivo, todo apunta a un resultado: un jugador que puede seguir pensando, seguir aprendiendo y seguir hacia adelante.
-        </p>
-      </div>
-    </section>
-
-    <section id="cafe">
-      <div class="section-card cafe-card">
-        <h2>
-          <span data-lang="en">Fuel the Morning. Carry the Dream.</span>
-          <span data-lang="es">Impulsa la Mañana. Carga el Sueño.</span>
-        </h2>
-
-        <p data-lang="en">
-          Café Pa’Lante is the coffee and tea side of the movement — built for early practices, tournament mornings, late-night planning, coaches, parents, trainers, and basketball families who keep showing up.
-        </p>
-
-        <p data-lang="en">
-          It is not separate from the message. It carries the same spirit: <strong>one cup, one step, one more reason to keep going.</strong>
-        </p>
-
-        <p data-lang="es">
-          Café Pa’Lante es la parte de café y té del movimiento: creado para prácticas temprano, mañanas de torneo, planificación de noche, coaches, padres, entrenadores y familias de baloncesto que siguen presentes.
-        </p>
-
-        <p data-lang="es">
-          No está separado del mensaje. Lleva el mismo espíritu: <strong>una taza, un paso, una razón más para seguir pa’lante.</strong>
-        </p>
-
-        <div class="cta-row">
-          <a href="https://cafepalante.com" class="btn btn-primary" target="_blank" rel="noopener">
-            <span data-lang="en">Shop Café Pa’Lante</span>
-            <span data-lang="es">Comprar Café Pa’Lante</span>
-          </a>
+        <div class="visual-card" aria-label="Café Pa’Lante free games emblem">
+          <div class="game-emblem">
+            <div>
+              <strong data-lang="en">Free<br>Games</strong>
+              <strong data-lang="es">Juegos<br>Gratis</strong>
+              <span data-lang="en">By Café Pa’Lante</span>
+              <span data-lang="es">Por Café Pa’Lante</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="games-section" id="games">
+        <div class="section-head">
+          <p class="kicker" data-lang="en">Game Library</p>
+          <p class="kicker" data-lang="es">Biblioteca de Juegos</p>
+
+          <h2 data-lang="en">Choose a game.</h2>
+          <h2 data-lang="es">Escoge un juego.</h2>
+
+          <p class="section-copy" data-lang="en">We will add the games one at a time as the library grows. Start with the first Café Pa’Lante game below.</p>
+          <p class="section-copy" data-lang="es">Vamos a añadir los juegos uno por uno según crezca la biblioteca. Comienza con el primer juego de Café Pa’Lante abajo.</p>
+        </div>
+
+        <div class="game-list">
+          <article class="game-card">
+            <div>
+              <small data-lang="en">Game 001</small>
+              <small data-lang="es">Juego 001</small>
+              <h3 data-lang="en">Pa’Lante Focus</h3>
+              <h3 data-lang="es">Enfoque Pa’Lante</h3>
+              <p data-lang="en">A simple starter game for focus, rhythm, and a quick Pa’Lante moment.</p>
+              <p data-lang="es">Un juego sencillo para comenzar con enfoque, ritmo y un momento Pa’Lante.</p>
+            </div>
+            <a class="btn btn-primary" href="games/game-001.html">
+              <span data-lang="en">Play Game</span>
+              <span data-lang="es">Jugar</span>
+            </a>
+          </article>
+
+          <article class="game-card coming-soon">
+            <div>
+              <small data-lang="en">Game 002</small>
+              <small data-lang="es">Juego 002</small>
+              <h3 data-lang="en">Coming Soon</h3>
+              <h3 data-lang="es">Próximamente</h3>
+              <p data-lang="en">The next free Café Pa’Lante game will be added here.</p>
+              <p data-lang="es">El próximo juego gratis de Café Pa’Lante se añadirá aquí.</p>
+            </div>
+            <a class="btn" href="games/game-002.html">
+              <span data-lang="en">Coming Soon</span>
+              <span data-lang="es">Próximamente</span>
+            </a>
+          </article>
+
+          <article class="game-card coming-soon">
+            <div>
+              <small data-lang="en">Game 003</small>
+              <small data-lang="es">Juego 003</small>
+              <h3 data-lang="en">Coming Soon</h3>
+              <h3 data-lang="es">Próximamente</h3>
+              <p data-lang="en">Add each new game step by step as the repo grows.</p>
+              <p data-lang="es">Añade cada juego paso a paso según crezca el repo.</p>
+            </div>
+            <a class="btn" href="games/game-003.html">
+              <span data-lang="en">Coming Soon</span>
+              <span data-lang="es">Próximamente</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="sponsor-card" id="cafe">
+        <p class="kicker" data-lang="en">Provided by Café Pa’Lante</p>
+        <p class="kicker" data-lang="es">Presentado por Café Pa’Lante</p>
+
+        <h2 data-lang="en">One cup. One game. One step forward.</h2>
+        <h2 data-lang="es">Una taza. Un juego. Un paso hacia adelante.</h2>
+
+        <p data-lang="en">Café Pa’Lante creates flavored coffees for the ones who keep going. These games are our free gift to the community.</p>
+        <p data-lang="es">Café Pa’Lante crea cafés con sabor para los que siguen pa’lante. Estos juegos son nuestro regalo gratis para la comunidad.</p>
+
+        <a class="btn" href="https://cafepalante.com" target="_blank" rel="noopener">
+          <span data-lang="en">Shop Café Pa’Lante Coffee</span>
+          <span data-lang="es">Comprar Café Pa’Lante</span>
+        </a>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <span data-lang="en">© 2026 Pa’Lante Basketball. Train. Think. Build. Keep going.</span>
-    <span data-lang="es">© 2026 Pa’Lante Basketball. Entrena. Piensa. Construye. Sigue pa’lante.</span>
+    <span data-lang="en">© 2026 Café Pa’Lante Games. Free games provided by Café Pa’Lante.</span>
+    <span data-lang="es">© 2026 Café Pa’Lante Games. Juegos gratis presentados por Café Pa’Lante.</span>
   </footer>
 
   <script>
-    const enBtn = document.getElementById("enBtn");
-    const esBtn = document.getElementById("esBtn");
-    const menuBtn = document.getElementById("menuBtn");
-    const navMenu = document.getElementById("navMenu");
-    const menuLinks = navMenu.querySelectorAll("a");
+    const enBtn = document.getElementById('enBtn');
+    const esBtn = document.getElementById('esBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const menuLinks = navMenu.querySelectorAll('a');
 
     function setLanguage(lang) {
-      if (lang === "es") {
-        document.body.classList.add("es");
-        esBtn.classList.add("active");
-        enBtn.classList.remove("active");
-        document.documentElement.lang = "es";
-      } else {
-        document.body.classList.remove("es");
-        enBtn.classList.add("active");
-        esBtn.classList.remove("active");
-        document.documentElement.lang = "en";
-      }
-
-      localStorage.setItem("palanteBasketballLang", lang);
+      const isSpanish = lang === 'es';
+      document.body.classList.toggle('is-es', isSpanish);
+      enBtn.classList.toggle('active', !isSpanish);
+      esBtn.classList.toggle('active', isSpanish);
+      document.documentElement.lang = isSpanish ? 'es' : 'en';
+      localStorage.setItem('cafePalanteGamesLang', lang);
       closeMenu();
     }
 
     function toggleMenu() {
-      const isOpen = navMenu.classList.toggle("open");
-      menuBtn.classList.toggle("open", isOpen);
-      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      const isOpen = navMenu.classList.toggle('open');
+      menuBtn.classList.toggle('open', isOpen);
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     }
 
     function closeMenu() {
-      navMenu.classList.remove("open");
-      menuBtn.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-      menuBtn.setAttribute("aria-label", "Open menu");
+      navMenu.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
     }
 
-    enBtn.addEventListener("click", () => setLanguage("en"));
-    esBtn.addEventListener("click", () => setLanguage("es"));
-    menuBtn.addEventListener("click", toggleMenu);
+    enBtn.addEventListener('click', function () { setLanguage('en'); });
+    esBtn.addEventListener('click', function () { setLanguage('es'); });
+    menuBtn.addEventListener('click', toggleMenu);
 
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", closeMenu);
+    menuLinks.forEach(function (link) {
+      link.addEventListener('click', closeMenu);
     });
 
-    document.addEventListener("click", (event) => {
-      const clickedInsideNav = event.target.closest(".top-nav");
-      if (!clickedInsideNav) {
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.top-nav')) {
         closeMenu();
       }
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
         closeMenu();
       }
     });
 
-    const savedLang = localStorage.getItem("palanteBasketballLang");
-    if (savedLang === "es") {
-      setLanguage("es");
+    if (localStorage.getItem('cafePalanteGamesLang') === 'es') {
+      setLanguage('es');
     }
   </script>
 </body>
